@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人作品集</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand">Portfolio<span>.works</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="#design">平面设计</a></li>
+        <li><a href="#3d-ai">3D 交互和AI作品</a></li>
+        <li><a href="#dataviz">数据可视化</a></li>
+        <li><a href="pdf-view.html" class="nav-pdf-link">完整作品集 PDF</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>欢迎来到我的<span class="highlight">作品集</span></h1>
+    <p>展示平面设计、3D 交互与 AI 作品、数据可视化等多领域的创作成果</p>
+  </header>
+
+  <!-- Category Cards -->
+  <div class="card-grid">
+    <div class="card" onclick="document.getElementById('design').scrollIntoView({behavior:'smooth'})">
+      <div class="card-icon">&#x1F3A8;</div>
+      <h3>平面设计</h3>
+      <p>视觉设计、品牌设计、版式设计等平面作品</p>
+    </div>
+    <div class="card" onclick="document.getElementById('3d-ai').scrollIntoView({behavior:'smooth'})">
+      <div class="card-icon">&#x1F30D;</div>
+      <h3>3D 交互 &amp; AI 作品</h3>
+      <p>Unity 3D 项目、交互设计与 AI 生成作品</p>
+    </div>
+    <div class="card" onclick="document.getElementById('dataviz').scrollIntoView({behavior:'smooth'})">
+      <div class="card-icon">&#x1F4CA;</div>
+      <h3>数据可视化</h3>
+      <p>图表设计、数据叙事、信息可视化</p>
+    </div>
+  </div>
+
+  <!-- Design Section -->
+  <section class="section" id="design">
+    <div class="section-header">
+      <h2>平面设计</h2>
+      <p>视觉设计与品牌设计作品</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="category-block">
+      <h3>设计作品集</h3>
+      <p class="category-desc">包含视觉设计、品牌设计、版式设计等平面设计作品的完整集合。</p>
+      <a href="assets/设计.pdf" download class="btn btn-primary btn-download">下载作品集 PDF</a>
+    </div>
+  </section>
+
+  <!-- 3D & AI Section -->
+  <section class="section" id="3d-ai">
+    <div class="section-header">
+      <h2>3D 交互 &amp; AI 作品</h2>
+      <p>三维交互与人工智能创作</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="category-block">
+      <h3>3D 交互与 AI 作品集</h3>
+      <p class="category-desc">Unity 3D 项目、交互体验设计与 AI 生成内容的作品合集。</p>
+      <a href="assets/ai_unity.pdf" download class="btn btn-primary btn-download">下载作品集 PDF</a>
+    </div>
+  </section>
+
+  <!-- Data Visualization Section -->
+  <section class="section" id="dataviz">
+    <div class="section-header">
+      <h2>数据可视化</h2>
+      <p>数据叙事与信息设计</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="category-block">
+      <h3>数据可视化作品集</h3>
+      <p class="category-desc">图表设计、信息可视化与数据叙事项目的完整展示。</p>
+      <a href="assets/可视化.pdf" download class="btn btn-primary btn-download">下载作品集 PDF</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Portfolio — 托管于 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('#navLinks a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Highlight current nav item on scroll
+    var sections = document.querySelectorAll('.section[id]');
+    var navLinks = document.querySelectorAll('.nav-links a:not(.nav-pdf-link)');
+    window.addEventListener('scroll', function() {
+      var current = '';
+      sections.forEach(function(section) {
+        var top = section.offsetTop - 100;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

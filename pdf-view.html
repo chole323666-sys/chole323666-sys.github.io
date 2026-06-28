@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>完整作品集 PDF — 个人作品集</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand">Portfolio<span>.works</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html#design">平面设计</a></li>
+        <li><a href="index.html#3d-ai">3D 交互和AI作品</a></li>
+        <li><a href="index.html#dataviz">数据可视化</a></li>
+        <li><a href="pdf-view.html" class="nav-pdf-link active">完整作品集 PDF</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PDF Viewer -->
+  <main class="pdf-view-page">
+    <div class="pdf-container">
+      <div class="pdf-container-inner">
+        <div class="section-header">
+          <h2>完整作品集 — 新媒体</h2>
+          <p>直接在浏览器中预览或下载 PDF 文件</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="status-banner">
+          提示：部分移动浏览器可能不支持内嵌预览，请使用"下载"按钮获取文件。
+        </div>
+
+        <div class="pdf-actions">
+          <a href="assets/新媒体.pdf" download class="btn btn-primary btn-download">下载 新媒体.pdf</a>
+          <a href="assets/新媒体.pdf" target="_blank" class="btn btn-outline">新窗口打开</a>
+        </div>
+
+        <!-- PDF iframe -->
+        <iframe
+          src="assets/新媒体.pdf#toolbar=1&navpanes=1"
+          class="pdf-viewer"
+          title="新媒体作品集 PDF 预览"
+        ></iframe>
+
+        <!-- All PDFs -->
+        <div class="pdf-all-list">
+          <h3>全部作品集文件</h3>
+
+          <div class="pdf-file-item">
+            <div>
+              <span class="file-name">&#x1F4C4; 新媒体.pdf</span>
+              <span class="file-size">约 13.8 MB</span>
+            </div>
+            <a href="assets/新媒体.pdf" download class="btn btn-outline">下载</a>
+          </div>
+
+          <div class="pdf-file-item">
+            <div>
+              <span class="file-name">&#x1F3A8; 设计.pdf</span>
+              <span class="file-size">约 19.4 MB</span>
+            </div>
+            <a href="assets/设计.pdf" download class="btn btn-outline">下载</a>
+          </div>
+
+          <div class="pdf-file-item">
+            <div>
+              <span class="file-name">&#x1F4CA; 可视化.pdf</span>
+              <span class="file-size">约 2.6 MB</span>
+            </div>
+            <a href="assets/可视化.pdf" download class="btn btn-outline">下载</a>
+          </div>
+
+          <div class="pdf-file-item">
+            <div>
+              <span class="file-name">&#x1F30D; ai_unity.pdf</span>
+              <span class="file-size">约 2.7 MB</span>
+            </div>
+            <a href="assets/ai_unity.pdf" download class="btn btn-outline">下载</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Portfolio — 托管于 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('#navLinks a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
